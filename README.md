@@ -15,7 +15,26 @@ Site de agendamento online para profissionais de saúde (feito para psicólogas,
 
 ---
 
-## Como colocar no ar (passo a passo)
+## Versão de demonstração no GitHub Pages (grátis, 1 minuto)
+
+A pasta `docs/` tem o site inteiro em **modo demonstração**: dá para escolher horário, preencher os dados, simular o pagamento, ver a confirmação e abrir o painel da profissional. Nada é cobrado e nada é enviado de verdade. Serve para apresentar o projeto.
+
+Para colocar no ar:
+
+1. No repositório, abra **Settings → Pages**.
+2. Em *Build and deployment*, escolha **Source: Deploy from a branch**.
+3. Em *Branch*, escolha **main** e a pasta **/docs**. Clique em **Save**.
+4. Espere 1 ou 2 minutos e recarregue a página de configurações: o endereço do site aparece no topo.
+
+O painel da profissional fica no mesmo endereço, terminando em `#painel`.
+
+Para mudar nome, textos, valor ou horários, edite o arquivo `site.config.js` direto no GitHub (ícone de lápis). Um robô do GitHub (aba **Actions**) gera a página de novo sozinho em cerca de 2 minutos.
+
+O GitHub Pages só hospeda páginas, sem servidor. Para cobrar e enviar e-mails e WhatsApp de verdade, siga o passo a passo abaixo.
+
+---
+
+## Como colocar a versão completa no ar (passo a passo)
 
 Siga na ordem. Anote cada chave num bloco de notas: você vai usar todas no passo 4.
 
