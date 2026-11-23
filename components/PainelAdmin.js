@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { formatarDataHora } from '../lib/formatar.js';
+import { formatarDataHora, primeiraMaiuscula } from '../lib/formatar.js';
 
 const CHAVE = 'senha-painel';
 
@@ -106,7 +106,7 @@ export default function PainelAdmin() {
         {lista.map((ag) => (
           <li key={ag.id} className="item-admin">
             <div className="quando">
-              {formatarDataHora(ag.inicio)}
+              {primeiraMaiuscula(formatarDataHora(ag.inicio))}
               <span className={`etiqueta ${ag.status}`}>
                 {ag.status === 'confirmado' ? 'confirmado' : 'aguardando pagamento'}
               </span>

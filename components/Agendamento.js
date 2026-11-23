@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { rotuloDia, formatarDataHora } from '../lib/formatar.js';
+import { rotuloDia, formatarDataHora, primeiraMaiuscula } from '../lib/formatar.js';
 
 export default function Agendamento({ dias, valor, comPagamento, minutosParaPagar }) {
   const [dia, setDia] = useState(null);
@@ -125,7 +125,7 @@ export default function Agendamento({ dias, valor, comPagamento, minutosParaPaga
             <span className="passo">3</span>Seus dados
           </h2>
           <div className="resumo">
-            <strong style={{ textTransform: 'capitalize' }}>{formatarDataHora(escolhido.inicio)}</strong>
+            <strong>{primeiraMaiuscula(formatarDataHora(escolhido.inicio))}</strong>
             <br />
             Valor: {valor}
           </div>
