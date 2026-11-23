@@ -1,0 +1,314 @@
+:root {
+  --fundo: #f4f6f3;
+  --cartao: #ffffff;
+  --texto: #2b3a33;
+  --suave: #6b7a72;
+  --verde: #4f7a68;
+  --verde-escuro: #3d6152;
+  --verde-claro: #e3ede7;
+  --borda: #d9e0db;
+  --erro: #b3412e;
+  --raio: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--verde-escuro);
+}
+
+.pagina {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 18px 24px;
+}
+
+.rodape {
+  text-align: center;
+  font-size: 13px;
+  color: var(--suave);
+  padding: 8px 18px 40px;
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+  font-size: 26px;
+  margin: 0 0 4px;
+}
+
+.cabecalho p {
+  margin: 0;
+  color: var(--suave);
+}
+
+.selo {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cartao {
+  background: var(--cartao);
+  border-radius: var(--raio);
+  padding: 22px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(43, 58, 51, 0.06);
+}
+
+.cartao h2 {
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+
+.passo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: #fff;
+  font-size: 13px;
+}
+
+.dias {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x mandatory;
+}
+
+.dia {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  min-width: 68px;
+  padding: 10px 8px;
+  border: 1.5px solid var(--borda);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--texto);
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+}
+
+.dia span {
+  display: block;
+  font-size: 12px;
+  color: var(--suave);
+  text-transform: capitalize;
+}
+
+.dia strong {
+  font-size: 16px;
+}
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 8px;
+}
+
+.horario {
+  padding: 12px 6px;
+  border: 1.5px solid var(--borda);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--texto);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dia.ativo,
+.horario.ativo {
+  border-color: var(--verde);
+  background: var(--verde);
+  color: #fff;
+}
+
+.dia.ativo span {
+  color: #e3ede7;
+}
+
+.campo {
+  margin-bottom: 14px;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--borda);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 16px; /* evita zoom automático no iPhone */
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+
+.escondido {
+  position: absolute;
+  left: -9999px;
+}
+
+.consentimento {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  margin: 4px 0 18px;
+}
+
+.consentimento input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+.botao {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--verde);
+  color: #fff;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background: var(--verde-escuro);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.botao.secundario {
+  background: #fff;
+  color: var(--verde-escuro);
+  border: 1.5px solid var(--verde);
+}
+
+.resumo {
+  background: var(--verde-claro);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.aviso {
+  color: var(--suave);
+  font-size: 14px;
+}
+
+.erro {
+  color: var(--erro);
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.centro {
+  text-align: center;
+}
+
+.icone-grande {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.texto-legal h2 {
+  font-size: 17px;
+  margin-top: 22px;
+}
+
+.lista-admin {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-admin {
+  border-bottom: 1px solid var(--borda);
+  padding: 12px 0;
+}
+
+.item-admin:last-child {
+  border-bottom: none;
+}
+
+.item-admin .quando {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 12px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+}
+
+.etiqueta.pendente {
+  background: #fbf0dc;
+  color: #8a5a12;
+}
+
+.acoes-admin {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.link-botao {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--erro);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}

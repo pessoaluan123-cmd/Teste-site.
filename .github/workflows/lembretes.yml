@@ -1,0 +1,22 @@
+# Todo dia às 9h (horário de Brasília) o GitHub chama o site,
+# que envia os lembretes das consultas de amanhã.
+# Precisa de dois "secrets" no repositório: SITE_URL e CRON_SECRET (veja o README).
+name: Lembretes diários
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # 12:00 UTC = 09:00 em Brasília
+  workflow_dispatch: # permite rodar na mão pela aba "Actions"
+
+jobs:
+  lembretes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar lembretes
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl --fail-with-body --silent --show-error --retry 3 --retry-delay 30 \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "${SITE_URL%/}/api/cron/lembretes"
